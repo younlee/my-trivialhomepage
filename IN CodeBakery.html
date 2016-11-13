@@ -1,0 +1,116 @@
+<?
+    session_start();
+    if(!isset($_SESSION['login_user'])){
+        echo "<script>alert('로그인해줘여 비밀이야');
+        location.replace('login.html');</script>";
+    }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>IN CodeBakery</title>
+  <style>
+      body{
+          background-image : url('배경!.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin: 0;
+          padding: 0;
+          display: center;
+      }
+
+      h1{
+          text-align: right;
+          margin : 15px 25px 0 0;
+          font-size: 40px;
+          font-family: Gabriola;
+          float: none;
+        }
+
+      h4{
+        text-align: left;
+        margin : 0;
+        font-size: 40px;
+        font-family: Gabriola;
+        float: none;
+        position:fixed;
+        top:630px;
+        left:1255px;
+      }
+
+      a{
+         color:Black;
+         text-decoration: none;
+     }
+
+
+
+    video{
+        float:none;
+        position:fixed;
+        left:130px;
+        top:20px;
+    }
+
+    #fb{
+        float: none;
+        position: fixed;
+        top:540px;
+        left:280px;
+        font-size: 25px;
+        font-family: Gabriola;
+    }
+
+    #ytd{
+        float: none;
+        position: fixed;
+        top:580px;
+        left:290px;
+        font-size: 25px;
+        font-family: Gabriola;
+    }
+    table{
+        float: none;
+        position: fixed;
+        top:130px;
+        left: 780px;
+    }
+    td{
+        padding: 10px;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <h1><a href="IN CodeBakery.html" style="color:white">CODEBAKERY</a></h1>
+    <h4><a href="index.html" style="color:white">LaYun's</a></h4>
+<table>
+    <tr>
+    <td><img id="first" src="코베1.png" style="width:140px;height:130px;" /></td>
+    <td><img id="second" src="코베2.png" style="width:140px;height:130px;" /></td>
+    <td><img id="third" src="코베3.png" style="width:140px;height:130px;" /></td>
+    </tr>
+    <tr>
+    <td><img src="코베4.png" style="width:140px;height:130px;" /></td>
+    <td><img src="코베6.jpg" style="width:140px;height:130px;" /></td>
+    <td><img src="코베7.jpg" style="width:140px;height:130px;" /></td>
+    </tr>
+    <tr>
+    <td><img src="코베8.jpg" style="width:140px;height:130px;" /></td>
+    <td><img src="코베9.jpg" style="width:140px;height:130px;" /></td>
+    <td><img src="코베10.jpg" style="width:140px;height:130px;" /></td>
+    </tr>
+</table>
+
+    <video width="500" height="500" controls>
+        <source src="CodeBakery 1차시 영상 업로드 최종.mp4" type="video/mp4" />
+    </video>
+
+    <p id="fb"><a href="http://facebook.com/codebakery" target="_blank" style="color:white">facebook.com/codebakery</a></p>
+    <p id="ytd"><a href="https://goo.gl/TLQAPF" target="_blank" style="color:white">https://goo.gl/TLQAPF</a></p>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<?
+    session_start();
+    if(!isset($_SESSION['login_user'])){
+        echo"<script>alert('로그인해줘여 비밀이야');
+        location.replace('login.html');</script>";
+    }
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DIMIGO</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+          var intv;
+         var current = 0;
+         var sIdx = 0;
+         var sCnt =  4;
+
+
+         function startTopSlider() {
+             intv = setInterval(function () {
+                 $("#ul_btns").find("a").eq(current++ % sCnt).click();
+             }, 3000);
+         }
+
+         function setBnr(idx, bnr, allTab, addCls) {
+             $(bnr).css("visibility", "hidden")
+                   .eq(idx).css("visibility", "visible");
+             $(allTab).removeClass(addCls);
+             $(allTab).eq(idx).addClass(addCls);
+         }
+
+         $(document).ready(function () {
+
+             //set init
+             $("#top_0").css("visibility", "visible");
+             $("#btn_0").addClass("on");
+             startTopSlider();
+
+
+             $("#ul_btns").find("a").click(function(){
+                 var idx = $(this).attr("id").split("_")[1];
+                 setBnr(idx, "#TopSlider > div" , "#ul_btns > a" , "on" );
+
+             });
+
+
+         });
+  </script>
+  <style>
+      body{
+          background-image : url('배경!.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin: 0;
+          padding: 0;
+          display: center;
+      }
+
+      h1{
+          text-align: right;
+          margin : 15px 25px 0 0;
+          font-size: 40px;
+          font-family: Gabriola;
+          float: none;
+        }
+
+      h4{
+        text-align: left;
+        margin : 0;
+        font-size: 40px;
+        font-family: Gabriola;
+        float: none;
+        position:fixed;
+        top:630px;
+        left:1255px;
+      }
+
+      a {
+          color:Black;
+          text-decoration: none;
+      }
+
+      #TopSlider{
+          width:600px;
+          height:400px;
+          float: none;
+          position: absolute;
+          left: 400px;
+          border:1px
+          solid #d2d2d2;
+      }
+
+      #TopSlider div{
+          width:600px;
+          height:400px;
+          visibility:hidden;
+          position:absolute;
+      }
+
+    ul,li{
+        list-style:none;
+    }
+
+      #ul_btns{
+          float:none;
+          position:absolute;
+          top:500px;
+          left:510px;
+          width:300px;
+      }
+
+     #ul_btns a{
+         float: left;
+         width:40px;
+         border:1px solid #e0e0e0;
+     }
+
+     #ul_btns .on{
+         background-color:#D7DADB;
+
+     }
+
+  </style>
+</head>
+<body>
+    <h1><a href="IN DIMIGO.html" style="color:white">DIMIGO</a></h1>
+    <h4><a href="index.html" style="color:white">LaYun's</a></h4>
+    <div id="TopSlider">
+        <div id="top_0"><img src="쭝국.jpg" style="width:600px;height:400px;"/></div>
+        <div id="top_1"><img src="쭝국1.jpg" style="width:600px;height:400px;"/></div>
+        <div id="top_2"><img src="쭝국2.jpg" style="width:600px;height:400px;"/></div>
+        <div id="top_3"><img src="체육대회.jpg" style="width:600px;height:400px;"/></div>
+        <div id="top_4"><img src="쭝국3.jpg" style="width:600px;height:400px;"/></div>
+        <div id="top_5"><img src="쭝국4.jpg" style="width:600px;height:400px;"/></div>
+        <div id="top_6"><img src="쭝국5.jpg" style="width:600px;height:400px;"/></div>
+    </div>
+    <div id="TopSliderBtn">
+        <ul id="ul_btns">
+            <a href="#" id="btn_0"><li style="text-align:center;">1</li></a>
+            <a href="#" id="btn_1"><li style="text-align:center;">2</li></a>
+            <a href="#" id="btn_2"><li style="text-align:center;">3</li></a>
+            <a href="#" id="btn_3"><li style="text-align:center;">4</li></a>
+            <a href="#" id="btn_4"><li style="text-align:center;">5</li></a>
+            <a href="#" id="btn_5"><li style="text-align:center;">6</li></a>
+            <a href="#" id="btn_6"><li style="text-align:center;">7</li></a>
+        </ul>
+    </div>
+
+</body>
+</html>

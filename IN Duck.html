@@ -1,0 +1,165 @@
+<?
+    session_start();
+    if(!isset($_SESSION['login_user'])){
+        echo"<script>alert('로그인해줘여 비밀이야');
+        location.replace('login.html');</script>";
+    }
+?>
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <title>IN Duck</title>
+      <script>
+          jQuery(function() {
+            var rolling_time = 4000;
+            var effect_time = 2000;
+
+            var $rolling_img = $("#rolling_img > img");
+            $rolling_img.not(":first").hide();//not 첫번째 엘리먼트를 제외하고 숨긴다.
+
+            setInterval(rolling,effect_time);
+            setTimeout(function(){
+                setInterval(next,effect_time);
+            },1000);
+
+            function rolling()
+                {
+                $visible_img = $rolling_img.filter(":visible");//visible(보이는)엘리먼트를 가져온다.
+                $visible_img.fadeOut(1000);
+                }
+
+            function next(){
+
+                $next_img = $visible_img.next();//다음 사진을 반환한다.
+                if ($next_img.length === 0) {
+                    $next_img = $rolling_img.filter(":first");
+                }
+                $next_img.fadeIn(1000);
+            }
+
+            });
+
+
+
+
+      </script>
+
+      <style>
+
+          body{
+              background-image : url('배경!.png');
+              background-size: cover;
+              background-repeat: no-repeat;
+              margin: 0;
+              padding: 0;
+              display: center;
+
+          }
+
+          h1{
+              text-align: right;
+              margin : 15px 25px 0 0;
+              font-size: 40px;
+              font-family: Gabriola;
+              float: none;
+            }
+
+            h4{
+                text-align: left;
+                margin : 0;
+                font-size: 40px;
+                font-family: Gabriola;
+                float: none;
+                position:fixed;
+                top:630px;
+                left:1255px;
+
+              }
+
+            a {
+                color:Black;
+                text-decoration: none;
+            }
+
+            .yyy{
+                position: absolute;
+                left:680px;
+                top:80px;
+                opacity: 0.3;
+            }
+            img{
+                margin: 10px;
+                margin-bottom: 0;
+                float: none;
+            }
+            table{
+                float: none;
+                position: absolute;
+                top:60px;
+                left:50px;
+            }
+
+            audio{
+                float: none;
+                position: absolute;
+                top:630px;
+                left: 200px;
+            }
+
+           #rolling_img{
+                float: none;
+                position: fixed;
+                top:80px;
+                left:760px;
+            }
+
+
+
+
+         </style>
+
+</head>
+
+
+<body>
+    <h1><a href="IN Duck.html" style="color:white">DUCK</a></h1>
+    <h4><a href="index.html" style="color:white">LaYun's</a></h4>
+    <table class="suni" style="width = 645px;">
+        <tr>
+            <td><img id="one" src="순이1.png" style="width:170px;height:170px;" onmouseover="src='순이11.png';" onmouseout="src='순이1.png';" /></td>
+            <td><img id="two" src="순이2.png" style="width:170px;height:170px;" onmouseover="src='순이22.png';" onmouseout="src='순이2.png';"/></td>
+            <td><img id="three" src="순이3.png" style="width:170px;height:170px;" onmouseover="src='순이33.png';" onmouseout="src='순이3.png';"/></td>
+        </tr>
+        <tr>
+            <td><img id="four" src="순이4.png" style="width:170px;height:170px;" onmouseover="src='순이44.png';" onmouseout="src='순이4.png';"/></td>
+            <td><img id="five" src="순이5.png" style="width:170px;height:170px;" onmouseover="src='순이55.png';" onmouseout="src='순이5.png';"/></td>
+            <td><img id="six" src="순이6.png" style="width:170px;height:170px;" onmouseover="src='순이66.png';" onmouseout="src='순이6.png';"/></td>
+        </tr>
+        <tr>
+            <td><img id="seven" src="순이7.png" style="width:170px;height:170px;" onmouseover="src='순이77.png';" onmouseout="src='순이7.png';"/></td>
+            <td><img id="eight" src="순이8.png" style="width:170px;height:170px;" onmouseover="src='순이88.png';" onmouseout="src='순이8.png';"/></td>
+            <td><img id="nine" src="순이9.png" style="width:170px;height:170px;" onmouseover="src='순이99.png';" onmouseout="src='순이9.png';"/></td>
+        </tr>
+    </table>
+
+       <div id="rolling_img">
+            <img src="준열1.png" style="width:500px; height:500px;"/>
+            <img src="준열2.png" style="width:500px; height:500px;"/>
+            <img src="준열3.png" style="width:500px; height:500px;"/>
+            <img src="준열4.png" style="width:500px; height:500px;"/>
+            <img src="준열5.png" style="width:500px; height:500px;"/>
+        </div>
+
+
+<div class="yyy">
+    <img src="쥴.png" alt="쥴" style="width:1px;height:510px;" />
+
+</div>
+
+    <audio autoplay loop>
+        <source src="류준열-melody.mp3" type="audio/mpeg"/>
+    </audio>
+</body>
+</html>

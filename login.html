@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login page</title>
+    <style>
+    body{
+        background-image : url('배경!.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        display: center;
+    }
+
+    h1{
+        font-size: 40px;
+        font-family: Gabriola;
+        float:none;
+        position: fixed;
+        top:150px;
+        left: 630px;
+    }
+
+    table{
+        float: none;
+        position: fixed;
+        top:280px;
+        left:540px;
+    }
+
+    #submit{
+        float: none;
+        position: fixed;
+        top:360px;
+        left:630px;
+    }
+    #rewrite{
+        float: none;
+        position: fixed;
+        top:360px;
+        left:700px;
+    }
+
+    </style>
+</head>
+<body>
+<form method="post" action="login.php">
+ <h1 style="color:white">Login please</h1>
+ <table border="2">
+  <tr>
+   <td style="color:white; text-align:center;">ID</td>
+   <td><input type="text" size="30" name="username"></td>
+  </tr>
+  <tr>
+   <td style="color:white; text-align:center;">Password</td>
+   <td><input type="password" size="30" name="password"></td>
+  </tr>
+ </table>
+ <input id="submit" type="submit" value="submit">
+ <input id="rewrite" type="reset" value="rewrite">
+</form>
+</body>
+</html>
